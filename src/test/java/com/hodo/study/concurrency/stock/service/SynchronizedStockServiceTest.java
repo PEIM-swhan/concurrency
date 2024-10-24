@@ -1,4 +1,4 @@
-package com.hodo.study.concurrency.service;
+package com.hodo.study.concurrency.stock.service;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -11,8 +11,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hodo.study.concurrency.domain.Stock;
-import com.hodo.study.concurrency.repository.StockRepository;
+import com.hodo.study.concurrency.stock.domain.Stock;
+import com.hodo.study.concurrency.stock.repository.StockRepository;
+import com.hodo.study.concurrency.stock.service.SynchronizedStockService;
 
 @SpringBootTest
 public class SynchronizedStockServiceTest {

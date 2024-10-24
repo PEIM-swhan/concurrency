@@ -4,7 +4,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,13 +15,13 @@ import com.hodo.study.concurrency.stock.domain.Stock;
 import com.hodo.study.concurrency.stock.repository.StockRepository;
 
 @SpringBootTest
-public class PessimisticLockStockServiceTest {
+public class OptimisticLockStockServiceTest {
 
 	@Autowired
 	private StockRepository stockRepository;
 
 	@Autowired
-	private PessimisticLockStockService stockService;
+	private OptimisticLockStockService stockService;
 
 
 	@BeforeEach

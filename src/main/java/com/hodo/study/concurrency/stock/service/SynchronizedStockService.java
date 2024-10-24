@@ -1,4 +1,4 @@
-package com.hodo.study.concurrency.service;
+package com.hodo.study.concurrency.stock.service;
 
 import org.springframework.stereotype.Service;
 

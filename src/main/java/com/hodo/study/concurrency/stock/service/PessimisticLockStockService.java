@@ -10,13 +10,13 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class StockService {
+public class PessimisticLockStockService {
 
 	private final StockRepository stockRepository;
 
 	@Transactional
 	public void decrease(final Long id, final int quantity) {
-		final Stock stock = stockRepository.findById(id).orElseThrow();
+		final Stock stock = stockRepository.findByIdWithPessimisticLock(id);
 		stock.decrease(quantity);
 	}
 }
