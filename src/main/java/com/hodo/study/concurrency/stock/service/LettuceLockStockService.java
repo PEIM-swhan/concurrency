@@ -16,7 +16,6 @@ public class LettuceLockStockService {
 
 	private final StockService stockService;
 
-	@Transactional
 	public void decrease(final Long id, final int quantity) {
 		while (!redisLockRepository.lock(id)) {
 			try {

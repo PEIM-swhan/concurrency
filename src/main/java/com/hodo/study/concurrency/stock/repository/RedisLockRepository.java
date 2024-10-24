@@ -16,7 +16,7 @@ public class RedisLockRepository {
 	/**
 	 * Redis setnx 명령어를 사용한 lock 획득
 	 * lock의 만료시간을 설정할 수 있음 (3초)
-	 * lock이 없으면 획득하고 있
+	 * lock이 없으면 획득하고 있으면 실패처리
 	 */
 	public Boolean lock(Long key) {
 		return redisTemplate.opsForValue()
