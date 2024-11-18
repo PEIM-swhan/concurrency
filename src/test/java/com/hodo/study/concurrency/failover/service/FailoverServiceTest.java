@@ -26,7 +26,7 @@ class FailoverServiceTest {
 	private FailOverRepository failOverRepository;
 
 	@Test
-	@DisplayName("동시에 출고 요청 100건 테스트")
+	@DisplayName("논 컨커런시 컬렉션에 데이터 넣음")
 	public void decreaseHundredTest () throws InterruptedException {
 		int threadCount = 100;
 		final CountDownLatch latch = new CountDownLatch(threadCount);
@@ -50,8 +50,7 @@ class FailoverServiceTest {
 
 		latch.await();
 
-		System.out.println(failOverRepository.print());
-		// Assertions.assertEquals(failOverRepository.count(), 100);
+		 Assertions.assertEquals(failOverRepository.count(), 100);
 	}
 
 }

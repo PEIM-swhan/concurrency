@@ -24,7 +24,7 @@ public class RedissonLockStockService {
 		// 10초간 Lock 획득을 시도하고, 1초간 Lock을 유지한다.
 		// 10초 뒤에도 Lock 획득을 하지 못하면 실패로 간주
 		try {
-			boolean hadLock = lock.tryLock(1, 1, TimeUnit.SECONDS);
+			boolean hadLock = lock.tryLock(10, 1000, TimeUnit.MILLISECONDS);
 			if (!hadLock) {
 				System.out.println("lock 획득 실패");
 				return;

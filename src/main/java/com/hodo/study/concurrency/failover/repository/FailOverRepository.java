@@ -9,18 +9,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class FailOverRepository {
 
-	// private final List<String> inMemoryDB = new ArrayList<>();
-	private final StringBuffer inMemoryDB = new StringBuffer();
-	// private final List<String> inMemoryDB = Collections.synchronizedList(new ArrayList<>());
+	private final List<String> inMemoryDB = Collections.synchronizedList(new ArrayList<>());
 
 	public void save(final String data) {
-		// inMemoryDB.add(data);
-		inMemoryDB.append(data);
+		 inMemoryDB.add(data);
 	}
 
-	// public int count() {
-	// 	return inMemoryDB.size();
-	// }
+	 public int count() {
+	 	return inMemoryDB.size();
+	 }
 
 	public String print() {
 		return inMemoryDB.toString();

@@ -37,7 +37,7 @@ public class NamedLockStockServiceTest {
 		int threadCount = 100;
 		final CountDownLatch latch = new CountDownLatch(threadCount);
 
-		ExecutorService executorService = Executors.newFixedThreadPool(32);
+		ExecutorService executorService = Executors.newFixedThreadPool(100);
 
 		for (int i = 0; i < threadCount; i++) {
 			executorService.submit(() -> {
